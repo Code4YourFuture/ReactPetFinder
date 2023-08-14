@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { AdoptionFormValues } from '../interfaces/adoptionFormValues';
+import axios from "axios";
+import { AdoptionForm } from "../models/AdoptionForm";
 
-const apiURL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+const apiURL = process.env.REACT_APP_API_URL + "adoptions" || "";
 
-export const postAdoptionForm = async (formValues: AdoptionFormValues): Promise<any> => {
-  const response = await axios.post(`${apiURL}adoptions`, formValues);
-  return response.data;
-};
+export const postAdoption = async (formValues: AdoptionForm) : Promise<any> => {
+    const response = await axios.post(`${apiURL}`, formValues);
+    return response.data;
+}

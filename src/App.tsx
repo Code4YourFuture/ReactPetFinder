@@ -1,22 +1,24 @@
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { PetList } from './components/petList';
-import { Header } from './components/header';
-import { PetDetails } from './components/petDetails';
-import { AdoptionForm } from './components/adoptionForm';
+import { Header } from './components/Header';
+import { PetList } from './components/PetList';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { PetDetails } from './components/PetDetails';
+import { PetAdoptionForm } from './components/PetAdoptionForm';
 
 function App() {
   return (
-    <Router>
-      <div className="container">
+    <div className="App">
+      <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<PetList />} />
-          <Route path="/details/:id" element={<PetDetails />} />
-          <Route path="/adopt/:id" element={<AdoptionForm />} />
+          <Route path="/" element={<PetList></PetList>}></Route>
+          <Route path="/details/:id" element={<PetDetails />}></Route>
+          <Route path="/adoptions/:id" element={<PetAdoptionForm />}></Route>
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
